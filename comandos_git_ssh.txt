@@ -1,2 +1,16 @@
 ##Clonar este repositorio por ssh
 git clone git@github.com:wandersfalsin/primeiro_repositorio_dio.git
+
+##Para fazer o push do repositorio por ssh, precisa cria uma chave publica no SO para trocar com o git.
+ssh-keygen -t ed25519 -C "your_email@example.com"
+ 
+#Depois, copie a chave publica criada para ser inserida na plataforma GitHub 
+cat ~/.ssh/id_ed25519.pub
+
+#No seu perfil no GitHub, clique em "SSH and GPG keys" e em New SSH key. Informe um titulo e cole o resultado do cat anterior.
+
+#Apos git add, precisa indicar para o comando git qual o usuario que vai fazer o commit e o push
+git config --global user.email "your_email@example.com"
+
+#Agora so subir
+git push origin main
